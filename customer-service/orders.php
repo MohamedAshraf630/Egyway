@@ -5,7 +5,7 @@
 
 <?php
 $orders = $db->get("orders");
-
+$error="";
 // Check if there is a query string, then retrive it to show the error.
 $queries = array();
 parse_str($_SERVER['QUERY_STRING'], $queries);

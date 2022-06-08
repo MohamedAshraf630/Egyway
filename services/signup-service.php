@@ -18,6 +18,7 @@ $data = array(
     "name" => $_POST["name"],
     "email" => $_POST["email"],
     "password" => $_POST["password"],
+    "nationalId"=> $_POST["nationalId"],
     "nationalIdUrl" => $uploads_prefix . $nationalId_file,
     "pictureUrl" => $uploads_prefix . $picture_file,
     "role" => "customer",

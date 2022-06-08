@@ -9,17 +9,10 @@
     <title>EgyWAY</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-    <script src="/egyway/admin/assets/vendor/jquery/jquery.min.js"></script>
-    <!-- Bootstrap core JS-->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
-    <!-- Third party plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-    <!-- Core theme JS-->
-    <!-- Font Awesome icons (free version)-->
-    <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/egyway/css/styles.css" rel="stylesheet" />
+    <!-- Bootstrap core JS + JQuery -->
+    <script src="/egyway/assets/js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="/egyway/assets/css/bootstrap.min.css">
+    <script src="/egyway/assets/js/bootstrap.bundle.min.js"></script>
 </head>
 
 <body>
@@ -27,7 +20,7 @@
     session_start();
     $cart_count = '';
     $user = null;
-    if(isset($_SESSION['user'])) {
+    if (isset($_SESSION['user'])) {
         $user = $_SESSION['user'];
     }
     if (isset($user) and isset($_SESSION["cart"][$user['id']])) {
@@ -46,7 +39,8 @@
             $qualityControl = '<a class="float-right pr-4" href="/egyway/quality-control/reports.php">Reports</a>
                                <a class="float-right pr-4" href="/egyway/quality-control/comments.php">Traveler Comments</a>';
         } else if ($user['role'] === 'customerService') {
-            $customerService = '<a class="float-right pr-4" href="/egyway/customer-service/orders.php">Orders</a>';        }
+            $customerService = '<a class="float-right pr-4" href="/egyway/customer-service/orders.php">Orders</a>';
+        }
         echo '
         <div class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="/egyway">EgyWAY</a>

@@ -23,6 +23,7 @@
 				<div class="form-group">
 					<label for="" class="control-label">Password</label>
 					<input id="password" type="password" name="password" required="" class="form-control">
+					<div id="pass" class="text-danger">Password Must Be Atleast 8 Characters</div>
 				</div>
 				<div class="form-group">
 					<label for="" class="control-label">Confirm Password</label>
@@ -56,6 +57,7 @@
 	$('#confirmPasswordError').hide();
 	$('#emailValidation').hide();
 	$('#nationalIdValidation').hide();
+	$('#pass').hide();
 
 	// Handle the submit
 	$('#signup-frm').submit(function(e) {
@@ -74,6 +76,12 @@
 			$('#confirmPasswordError').show();
 		} else {
 			$('#confirmPasswordError').hide();
+		}
+		if(password.length<8) {
+			e.preventDefault();
+			$('#pass').show();
+		} else {
+            $('#pass').hide();
 		}
 	});
 	$('#email').keyup(function(e) {
